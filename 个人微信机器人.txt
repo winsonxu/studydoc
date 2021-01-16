@@ -1,0 +1,32 @@
+AccessibilityService  Android辅助
+
+android基于Xposed的
+Xposed  底层框架
+VirtualXposed 免ROOT
+
+微XWechatUnrecalled（开源代码已停更）JAVA
+https://github.com/fkzhang/WechatUnrecalled
+
+微信巫师 WechatMagician https://github.com/Gh0u1L5/  kotlin
+WechatSpellbook微信巫师底层抽取独立开源项目https://github.com/Gh0u1L5/WechatSpellbook
+
+
+
+
+PC端多微信客服
+聚聊客服系统 www.yunlauncher.com 手机接收转发到云端再显示到浏览器/PC端
+开放SDK  https://me.csdn.net/ling_76539446
+
+WinAPIOverride32 5.1.5 源代码（wetool原理）
+https://download.csdn.net/download/viecks_wang/884368
+
+
+mac和ios的
+一款功能强大的 macOS 版微信小助手 v1.7.5 多开等
+https://github.com/TKkk-iOSer/WeChatPlugin-iOS
+IOS版的微信助手
+https://github.com/TKkk-iOSer/WeChatPlugin-iOS
+
+
+老式的方法
+web版微信接口https://github.com/biezhi/wechat-api

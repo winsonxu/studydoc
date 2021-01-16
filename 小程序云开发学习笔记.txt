@@ -1,0 +1,55 @@
+1.创建云函数后需要先在本地文件夹中执行npm i
+2.执行npm i tcb-router && npm install glob
+3.在index.js里写
+const TcbRouter = require('tcb-router');
+const glob = require('glob')
+const { resolve, basename } = require('path')
+
+4.在main里写
+const app = new TcbRouter({ event });
+
+// 路由规则都放在api里，文件名就是路由，内容就是具体实现
+  glob.sync(resolve(__dirname, './api/', '**/*.js'))
+    .filter(value => (value.indexOf('index.js') === -1))
+    .forEach(router => {
+      app.router(basename(router, '.js'), require(router))
+    });
+
+return app.serve();
+
+5.在api中建立hello.js
+router = async (ctx, next) => {
+  console.log('hello');
+  ctx.body = {
+    code: 0,
+    data: { name: 'world' }
+  };
+}
+
+module.exports = router;
+
+6.小程序调用
+doCallmyfun: function () {
+    wx.cloud.callFunction({
+      name: 'funname',
+      data:{
+        $url:'school',
+        other:'xxx'
+      },
+      success: res => {
+        console.log('[云函数] [user] res : ', res)
+      },fail:err=>{
+          console.error('[云函数] [login] 调用失败', err)
+      }
+    })
+  },
+
+
+6.连接mysql   
+npm i --save sequelize
+npm i --save mysql2
+
+导入model
+系统启动时自动同步数据库
+将全部model放到context里给controller调用
+执行增删改查

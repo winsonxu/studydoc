@@ -1,0 +1,23 @@
+
+tinyproxy.conf代理设置
+服务端
+yum -y install tinyproxy 
+vi /etc/tinyproxy/tinyproxy.conf
+改 port
+注释 allow 127.0.01
+service tinyproxy restart
+
+
+客户端设置全局代理
+#打开profile文件
+vim /etc/profile
+#添加Proxy代理信息（其中username和password根据需要填写，若无则不填写）
+http_proxy = http://username:password@proxy_ip:port/
+https_proxy = http://username:password@proxy_ip:port/
+ftp_proxy = http://username:password@proxy_ip:port/
+export http_proxy
+export https_proxy
+export ftp_proxy
+
+#生效配置
+source /etc/profile
